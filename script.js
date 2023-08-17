@@ -40,3 +40,8 @@ let totalProdPrice = getPrice(products);
 console.log(totalSummerPrice);
 console.log(totalWinterPrice);
 console.log(totalProdPrice);
+
+document.write(`<tr><td>${totalSummerPrice}</td>
+<td>${totalWinterPrice}</td>
+<td>${totalProdPrice}</td></tr>
+`)
