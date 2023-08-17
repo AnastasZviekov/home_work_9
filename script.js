@@ -41,7 +41,7 @@ console.log(totalSummerPrice);
 console.log(totalWinterPrice);
 console.log(totalProdPrice);
 
-document.write(`<tr><td>${totalSummerPrice}</td>
-<td>${totalWinterPrice}</td>
-<td>${totalProdPrice}</td></tr>
+document.write(`<tr><td>Summer Price: ${totalSummerPrice}</td> <br>
+<td>Winter Price ${totalWinterPrice}</td> <br>
+<td>Usual Price ${totalProdPrice}</td></tr> <br>
 `)
