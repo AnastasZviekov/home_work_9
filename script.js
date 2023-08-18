@@ -1,36 +1,29 @@
 const products = [['apple', 10], ['banana', 8], ['mango', 20], ['grape', 18]]
 
-function summerValue(value) {
-    return value * 0.8;
-}
 
-function winterValue(value) {
-    return value * 2;
-}
+    function getPrice(products, seasonFunc) {
+        let copiedPrice = JSON.parse(JSON.stringify(products));
+        let totalPrice = 0;
+        let res=0;
 
-function getPrice(products, seasonFunc) {
-    let res = 0;
-    let totalPrice = 0;
-
-    let copiedPrice = [...products];
-    for (let i = 0; i < copiedPrice.length; i++) {
-        let currentProduct = copiedPrice[i];
-
-        for (let j = 0; j < currentProduct.length; j++) {
-            let currentPrice = currentProduct[j];
-            if (typeof currentPrice === `number`) {
-                if (typeof seasonFunc === `function`) {
-                    res = seasonFunc(currentPrice);
-                    totalPrice += res;
-                }
-                else {
-                    totalPrice += currentPrice;
-                }
-            }
-        }
+        for (let i = 0; i < copiedPrice.length; i++) {
+            let currentPrice = copiedPrice[i][1];
+             if (typeof seasonFunc === `function`) {
+                res= seasonFunc(currentPrice);}
+            else {
+                  res=currentPrice;}
+                  totalPrice+=res;
     }
     return totalPrice;
+}
 
+
+function summerValue(value){
+    return value*0.8;
+}
+
+function winterValue(value){
+    return value*2;
 }
 
 let totalSummerPrice = getPrice(products, summerValue);
